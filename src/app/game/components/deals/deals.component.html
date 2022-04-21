@@ -1,0 +1,7 @@
+<div class="row" *ngIf="gameService.deals">
+    <div *ngFor="let deal of gameService.deals">
+      {{ deal.title }}
+      <button (click)="basketService.addToBasket(deal)">Ajouter</button>
+      <img [src]="deal.thumb" class="card-img-top" alt="game-thumb" />
+    </div>
+  </div>

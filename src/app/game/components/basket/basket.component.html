@@ -1,0 +1,10 @@
+<p>Nombre d'item dans le panier : {{ basketService.getTotalItemsBasket() }}</p>
+<p>Prix normal du panier : {{ basketService.getTotalNormalPrice() }}</p>
+<p>Prix réduit du panier : {{ basketService.getTotalPrice() }}</p>
+<div *ngFor="let item of basketService.basket">
+    {{ item.quantite }}
+    {{ item.deal.title }}
+    <button (click)="basketService.removeToBasket(item.deal)">
+        Supprimer
+    </button>
+</div>

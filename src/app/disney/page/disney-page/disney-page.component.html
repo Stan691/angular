@@ -1,0 +1,53 @@
+<div>
+    <p>{{pageCourante}}</p>
+</div>
+
+<button (click)="pagePrecedente()">Page précédente</button>
+<button (click)="pageSuivante()">Page suivante</button>
+
+<section>
+    <h1>Héros favoris</h1>
+
+    <div class="content" >
+        <!-- Parcour les données récupérées via L'API -->
+        <div class="item" *ngFor="let personnage of personnages; let i = index">
+            <h3>{{personnage.name}}</h3>
+            <!-- Utilise l'image donnée par l'api -->
+            <img [src]="personnage.imageUrl" alt="img">
+           <button class="btn btn-primary" (click)="removePersonnage(i)">Supprimer ❌</button>
+            <hr>
+            <!-- Regarde si le personnage est dans un film -->
+            <div *ngIf="personnage.tvShows.length">
+                Film : 
+                <span *ngFor="let movie of personnage.tvShows">{{movie}}</span>
+            </div>
+            
+
+        </div>
+        </div>
+</section>
+
+
+<section  *ngIf="disneyData" >
+    <h1>Les héros disney</h1>
+    <div class="content" >
+        <!-- Parcour les données récupérées via L'API -->
+        <div class="item" *ngFor="let personnage of disneyData.data; let i = index">
+            <h3>{{personnage.name}}</h3>
+            <!-- Utilise l'image donnée par l'api -->
+            <img [src]="personnage.imageUrl" alt="img">
+            <button class="btn btn-primary" *ngIf="isNotFavorite(personnage)" (click)="addPersonnage(personnage)">Ajouter 💗</button>
+            <hr>
+            <!-- Regarde si le personnage est dans un film -->
+            <div *ngIf="personnage.tvShows.length">
+                Film : 
+                <span *ngFor="let movie of personnage.tvShows">{{movie}}</span>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,19 @@
+.content{
+    
+    display: grid;
+    width: 100vh;
+    grid-template-columns: 33% 33% 33%;
+    margin: auto;
+    .item{
+        background-color: white;
+        width: 245px;
+        border-radius: 15px;
+        padding: 20px auto;
+        text-align: center;
+        margin: 15px;
+    }
+    button{
+        margin-top: 25px;
+    }
+}
+

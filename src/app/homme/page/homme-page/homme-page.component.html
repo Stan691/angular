@@ -1,0 +1,30 @@
+<div>
+    <div class="content">
+        <h1>Ajouter des hommes</h1>
+
+        <div  *ngFor="let homme of hommes; let i = index">
+            <button (click)="addHomme(homme)">
+                Ajouter
+                <span>{{ homme.icon }}</span>
+            </button>
+        </div>
+
+        <h1>Voir liste d'humain</h1>
+
+        <div  *ngFor="let ligne of lignes; let i = index">
+            <button (click)="removeHomme(i)">
+                Supprimer
+                <span>{{ ligne.homme.icon }}</span>
+            </button>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<section>
+    
+
+    <div class="content">
+        <h1>
+            Recette List
+        </h1>
+        <hr>
+        
+        <div  *ngFor="let legume of legumes; let i = index">
+            <span>{{ legume.icon }}</span>
+            <span>{{ legume.name }}</span>
+            <button (click)="addLegume(legume)">+</button>
+        </div>
+        
+        <h1>
+           Recette
+        </h1>
+        <hr>
+        
+        <div *ngFor="let ligne of lignes; let i = index">
+            <span>{{ ligne.quantite }}</span>
+            <span>{{ ligne.legume.icon }}</span>
+            <span>{{ ligne.legume.name }}</span>
+            <button (click)="removeLegume(i)">x</button>
+            
+        </div>
+
+
+    </div>
+</section>
